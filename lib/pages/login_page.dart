@@ -12,8 +12,9 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   moveToHome(BuildContext context) async {
-    //
+    print("moveToHome");
     if (_formKey.currentState!.validate()) {
+      print("If Condtion");
       setState(() {
         changeButton = true;
       });
@@ -22,6 +23,8 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = false;
       });
+    } else {
+      print("Else Condtion");
     }
   }
 
@@ -76,13 +79,6 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: 40.0,
                       ),
-                      /*   ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, MyRoute.homeRoute);
-                        },
-                        child: Text("Button"),
-                        style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-                      ) */
                       Material(
                           color: Colors.deepPurple,
                           borderRadius:
